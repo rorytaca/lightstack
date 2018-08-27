@@ -10,9 +10,16 @@ const sassMiddleware = require('node-sass-middleware');
 const hbs = require('hbs');
 const hbsutils = require('hbs-utils')(hbs);
 const hbsHelpers = require('./utils/hbs-helpers');
-
 const globalData = require('./utils/global-data.js');
+
 const index = require('./routes/index');
+const aboutUs = require('./routes/about-us');
+const blog = require('./routes/blog');
+const eggRecipes = require('./routes/egg-recipes');
+const freeRangeEggs = require('./routes/free-range-eggs');
+const ourHens = require('./routes/our-hens');
+const promotionsAndCoupons = require('./routes/promotions-and-coupons');
+const whereToBuy = require('./routes/where-to-buy-free-range-eggs');
 
 const app = express();
 
@@ -49,6 +56,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', globalData);
 //content routes after global data
 app.use('/', index);
+app.use('/about-us', aboutUs);
+app.use('/blog', blog);
+app.use('/egg-recipes', eggRecipes);
+app.use('/free-range-eggs', freeRangeEggs);
+app.use('/our-hens', ourHens);
+app.use('/promotions-and-coupons', promotionsAndCoupons);
+app.use('/where-to-buy-free-range-eggs', whereToBuy);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
