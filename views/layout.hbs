@@ -29,7 +29,9 @@
     <!-- Asset Preloads preloads -->
     <!-- <link rel="preload" href="/fonts/font.woff" as="font"> -->
     <link rel="preload" href="/stylesheets/bundle.min.css" as="style">
-    <link rel="preload" href="/javascripts/libraries{{#if isProduction}}.min{{/if}}.js" as="script">    
+    <link rel="preload" href="/javascripts/libraries{{#if isProduction}}.min{{/if}}.js" as="script">
+    <link rel="preload" href="/javascripts/main{{#if isProduction}}.min{{/if}}.js" as="script">
+    <link rel="preload" href="/javascripts/templates{{#if isProduction}}.min{{/if}}.js" as="script">
     <!-- Global appData -->
     <!-- 
     <script type="text/javascript">
